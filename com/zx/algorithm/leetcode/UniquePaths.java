@@ -3,7 +3,7 @@ package com.zx.algorithm.leetcode;
 /**
  * @author zhangxin82@jd.com
  * @create 2019-04-09 11:32
- * @description 棋盘对角最短路径
+ * @description 棋盘对角最短路径 给定MxN棋盘，只允许从左上往右下走，每次走一格。共有多少种走法？
  */
 
 public class UniquePaths {
