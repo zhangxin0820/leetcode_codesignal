@@ -41,9 +41,6 @@ public class ThreeThreadPrint {
         }
 
         @Override
-
-
-
         public void run() {
             while (count <= 10) {
                 synchronized (nextLock) {
