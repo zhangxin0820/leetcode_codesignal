@@ -9,20 +9,33 @@ import java.util.Arrays;
 public class MoveZeros {
 
     public static void main(String[] args) {
-        new MoveZeros().moveZeros(new int[]{0,1,0,3,12});
+        moveZeros(new int[]{1,1,0,3,12});
+        moveZeros_2(new int[]{1,1,0,3,12});
     }
 
-    public void moveZeros(int[] nums) {
+    private static void moveZeros(int[] nums) {
         int tmp;
-        int index = -1;
+        int index = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 0) continue;
             tmp = nums[i];
-            if (index < 0) {
-                index = 0;
-            }
             nums[i] = 0;
             nums[index++] = tmp;
+        }
+        System.out.println(Arrays.toString(nums));
+    }
+
+    private static void moveZeros_2(int[] nums) {
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                if (nums[index] == 0) continue;
+                index = i;
+            } else {
+                int tmp = nums[i];
+                nums[i] = nums[index];
+                nums[index++] = tmp;
+            }
         }
         System.out.println(Arrays.toString(nums));
     }
