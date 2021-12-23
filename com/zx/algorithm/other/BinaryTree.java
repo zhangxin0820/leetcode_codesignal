@@ -2,6 +2,7 @@ package com.zx.algorithm.other;
 
 import com.zx.algorithm.TreeNode;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -46,6 +47,10 @@ public class BinaryTree {
         iterativeInOrder(root);
         System.out.println("\n非递归后序遍历 : ");
         iterativePostOrder(root);
+        System.out.println("\n非递归层次遍历 : ");
+        iterativeLevelOrder(root);
+        System.out.println("二叉树的深度 : ");
+        System.out.println(maxDepth(root));
     }
 
     private static void recursivePreOrder(TreeNode root) {
@@ -130,6 +135,29 @@ public class BinaryTree {
         while (!result.isEmpty()) {
             visit(result.pop());
         }
+    }
+
+    private static void iterativeLevelOrder(TreeNode root) {
+        if (root == null) return;
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        TreeNode node = root;
+        queue.offer(node);
+        while (!queue.isEmpty()) {
+            int level = queue.size();
+            for (int i = 0; i < level; i++) {
+                node = queue.poll();
+                if (node.getLeft() != null) queue.offer(node.getLeft());
+                if (node.getRight() != null) queue.offer(node.getRight());
+                visit(node);
+            }
+            System.out.println();
+        }
+    }
+
+    private static int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+        TreeNode node = root;
+        return Math.max(maxDepth(node.getLeft()),maxDepth(node.getRight())) + 1;
     }
 
     private static void visit(TreeNode node) {

@@ -9,11 +9,11 @@ import java.util.List;
  * @description 全排列
  */
 
-public class Permutations {
+public class Permutations_1_1 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 3};
-        List<List<Integer>> res = new Permutations().permute(nums);
+        List<List<Integer>> res = new Permutations_1_1().permute(nums);
         System.out.println(res);
     }
 
