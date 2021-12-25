@@ -2,6 +2,8 @@ package com.zx.algorithm.leetcode;
 
 import com.zx.algorithm.TreeNode;
 
+import java.util.Stack;
+
 /**
  * Created by zhangxin on 2021/12/16.
  * Time : 13:05
@@ -31,6 +33,7 @@ public class BinaryTreePathSum1 {
         node6.setRight(node8);
 
         System.out.println(hasPathSum(root, 2));
+        System.out.println(hasPathSum_2(root, 2));
     }
 
     private static boolean hasPathSum(TreeNode node, int sum) {
@@ -41,5 +44,28 @@ public class BinaryTreePathSum1 {
         }
 
         return hasPathSum(node.getLeft(), sum - node.getVal()) || hasPathSum(node.getRight(), sum - node.getVal());
+    }
+
+    private static boolean hasPathSum_2(TreeNode node, int sum) {
+        if (node == null) return false;
+        Stack<TreeNode> tree = new Stack<>();
+        Stack<Integer> value = new Stack<>();
+        tree.push(node);
+        value.push(node.getVal());
+        while (!tree.isEmpty()) {
+            TreeNode p = tree.pop();
+            int v = value.pop();
+            if (p.getLeft() == null && p.getRight() == null && sum == v) return true;
+            if (p.getRight() != null) {
+                tree.push(p.getRight());
+                value.push(p.getRight().getVal() + v);
+            }
+
+            if (p.getLeft() != null) {
+                tree.push(p.getLeft());
+                value.push(p.getLeft().getVal() + v);
+            }
+        }
+        return false;
     }
 }

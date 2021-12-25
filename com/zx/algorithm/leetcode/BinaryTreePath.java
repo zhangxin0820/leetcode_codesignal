@@ -3,6 +3,7 @@ package com.zx.algorithm.leetcode;
 import com.zx.algorithm.TreeNode;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  * Created by zhangxin on 2021/12/16.
@@ -37,6 +38,11 @@ public class BinaryTreePath {
         if (hasPath) {
             path.forEach(node -> System.out.print(node.getVal() + " "));
         }
+
+        System.out.println();
+        System.out.println("==================");
+        Stack<TreeNode> stack = new Stack<>();
+        getPathToRoot_2(root, node6, stack);
     }
 
     private static boolean getPathToRoot(TreeNode node, TreeNode target, LinkedList<TreeNode> path) {
@@ -50,5 +56,29 @@ public class BinaryTreePath {
 
         path.pop();
         return false;
+    }
+
+    private static void getPathToRoot_2(TreeNode root, TreeNode target, Stack<TreeNode> stack) {
+        if (root == null || target == null) return;
+        TreeNode node = root;
+        TreeNode pre = null;
+        while (node != null || !stack.isEmpty()) {
+            while (node != null) {
+                stack.push(node);
+                if (node.getVal() == target.getVal()) {
+                    stack.forEach(p -> System.out.print(p.getVal() + " "));
+                    return;
+                }
+                node = node.getLeft();
+            }
+            if (!stack.isEmpty()) {
+                node = stack.peek();
+                while (node.getRight() == null || (pre != null && pre == node.getRight())) {
+                    pre = stack.pop();
+                    node = stack.peek();
+                }
+                node = node.getRight();
+            }
+        }
     }
 }
