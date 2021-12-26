@@ -1,4 +1,4 @@
-package com.zx.algorithm.leetcode;
+package com.zx.algorithm.leetcode.backtrack;
 
 import com.zx.algorithm.TreeNode;
 

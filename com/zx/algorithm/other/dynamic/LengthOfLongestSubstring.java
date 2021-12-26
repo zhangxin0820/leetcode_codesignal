@@ -1,4 +1,4 @@
-package com.zx.algorithm.other;
+package com.zx.algorithm.other.dynamic;
 
 import java.util.HashMap;
 import java.util.HashSet;

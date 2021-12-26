@@ -1,4 +1,4 @@
-package com.zx.algorithm.leetcode;
+package com.zx.algorithm.leetcode.greedy;
 
 /**
  * Created by zhangxin on 2021/12/24.

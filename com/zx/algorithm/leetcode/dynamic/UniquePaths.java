@@ -1,4 +1,4 @@
-package com.zx.algorithm.leetcode;
+package com.zx.algorithm.leetcode.dynamic;
 
 /**
  * @author zhangxin82@jd.com

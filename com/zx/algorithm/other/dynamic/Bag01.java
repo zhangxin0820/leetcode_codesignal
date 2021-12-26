@@ -1,4 +1,4 @@
-package com.zx.algorithm.other;
+package com.zx.algorithm.other.dynamic;
 
 /**
  * Created by zhangxin on 2021/12/24.

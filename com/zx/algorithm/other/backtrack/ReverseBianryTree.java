@@ -1,4 +1,4 @@
-package com.zx.algorithm.other;
+package com.zx.algorithm.other.backtrack;
 
 import com.zx.algorithm.TreeNode;
 

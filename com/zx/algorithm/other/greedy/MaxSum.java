@@ -1,4 +1,4 @@
-package com.zx.algorithm.other;
+package com.zx.algorithm.other.greedy;
 
 /**
  * @author zhangxin82@jd.com
