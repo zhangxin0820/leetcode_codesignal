@@ -15,6 +15,7 @@ public class Bag01 {
         System.out.println(max);
     }
 
+    // dp[i][j] 表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少。
     private static int weightBag(int[] weight, int[] value, int bagSize) {
         int[][] dp = new int[weight.length][bagSize + 1];
         for (int j = 1; j <= bagSize; j++) {
