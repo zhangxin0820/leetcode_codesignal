@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @description t1打印偶数 t2打印奇数
  */
 
-public class MutithreadPrintCAS {
+public class MultithreadPrintCAS {
 
     static AtomicInteger num = new AtomicInteger(0);
     static volatile boolean flag = false;

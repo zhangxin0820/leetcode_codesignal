@@ -6,14 +6,14 @@ package com.zx.algorithm.other;
  * @description 多个线程交替打印0到100数字
  */
 
-public class MutithreadPrint {
+public class MultithreadPrint {
 
     private int count = 0;
     private final Object lock = new Object();
 
     public static void main(String[] args) throws InterruptedException {
 
-        MutithreadPrint demo = new MutithreadPrint();
+        MultithreadPrint demo = new MultithreadPrint();
 
         Runnable runnable = () -> {
             while (demo.count <= 10) {
