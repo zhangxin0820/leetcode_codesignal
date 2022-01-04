@@ -1,5 +1,7 @@
 package com.zx.algorithm.other;
 
+import com.zx.algorithm.ListNode;
+
 /**
  * @author zhangxin82@jd.com
  * @create 2019/11/28 12:05 下午
@@ -8,49 +10,22 @@ package com.zx.algorithm.other;
 
 public class ReverseLinkedList {
 
-    private class Node {
-        private String data;//数据域
-        private Node next;//指针域
+    public static void main(String[] args) {
 
-        public Node(String data) {
-            this.data = data;
-        }
-
-        public Node(String data, Node next) {
-            this.data = data;
-            this.next = next;
-        }
-
-        public Object getData() {
-            return data;
-        }
-
-        public void setData(String data) {
-            this.data = data;
-        }
-
-        public Node getNext() {
-            return next;
-        }
-
-        public void setNext(Node next) {
-            this.next = next;
-        }
     }
 
-    public static Node reverseListNode(Node head) {
-
-        if (head == null || head.getNext() == null) {
+    private static ListNode reverseListNode(ListNode head) {
+        if (head == null || head.next == null) {
             return head;
         }
 
-        Node pre = null;
-        Node cur = head;
-        Node next = null;
+        ListNode pre = null;
+        ListNode cur = head;
+        ListNode next = null;
 
         while (cur != null) {
-            next = cur.getNext();
-            cur.setNext(pre);
+            next = cur.next;
+            cur.next = pre;
             pre = cur;
             cur = next;
         }
