@@ -3,13 +3,22 @@ package com.zx.algorithm.leetcode;
 import com.zx.algorithm.ListNode;
 
 /**
- * Created by zhangxin on 2021/12/30.
- * Time : 12:24
+ * Created by zhangxin on 2022/01/04.
+ * Time : 21:48
  */
-public class MergeTwoList {
+public class MergeKList {
 
     public static void main(String[] args) {
 
+    }
+
+    private static ListNode merge(ListNode[] lists, int left, int right) {
+        if (left > right) return null;
+        if (left == right) return lists[left];
+        int mid = (left + right) / 2;
+        ListNode l = merge(lists, left, mid);
+        ListNode r = merge(lists, mid + 1, right);
+        return mergeTwoList(l, r);
     }
 
     private static ListNode mergeTwoList(ListNode list1, ListNode list2) {
