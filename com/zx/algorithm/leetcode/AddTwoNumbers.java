@@ -1,6 +1,8 @@
 package com.zx.algorithm.leetcode;
 
 
+import com.zx.algorithm.ListNode;
+
 /**
  * @author zhangxin82@jd.com
  * @create 2018-12-19 16:41
@@ -80,10 +82,4 @@ public class AddTwoNumbers {
 
         return sumList.next;
     }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
 }
