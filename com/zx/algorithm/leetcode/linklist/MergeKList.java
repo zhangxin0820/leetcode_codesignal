@@ -1,10 +1,11 @@
-package com.zx.algorithm.leetcode;
+package com.zx.algorithm.leetcode.linklist;
 
 import com.zx.algorithm.ListNode;
 
 /**
  * Created by zhangxin on 2022/01/04.
  * Time : 21:48
+ * 合并K个链表
  */
 public class MergeKList {
 

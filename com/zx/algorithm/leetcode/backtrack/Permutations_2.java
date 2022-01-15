@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Created by zhangxin on 2021/12/23.
  * Time : 21:27
+ * 给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。
  */
 public class Permutations_2 {
 
@@ -34,6 +35,9 @@ public class Permutations_2 {
 
         for (int i = 0; i < n; i++) {
             if (used[i]) continue;
+            // 同一层的去重 例如{1,1,2} 使用第二个1的时候 nums[i] == nums[i-1]是成立的
+            // 此时由于回溯的原因 used[i-1] == false也成立 说明前一个1已经被使用过了
+            // 所以不能再使用当前的1了 需要continue
             if (i > 0 && nums[i] == nums[i-1] && used[i-1] == false) continue;
             tmp.add(nums[i]);
             used[i] = true;
