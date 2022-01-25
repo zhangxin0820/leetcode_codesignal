@@ -36,9 +36,8 @@ public class RemoveListNodeElements {
         while (cur.next != null) {
             if (cur.next.val == val) {
                 cur.next = cur.next.next;
-            } else {
-                cur = cur.next;
             }
+            cur = cur.next;
         }
         return dummy.next;
     }
