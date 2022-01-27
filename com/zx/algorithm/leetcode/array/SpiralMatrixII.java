@@ -1,4 +1,4 @@
-package com.zx.algorithm.other;
+package com.zx.algorithm.leetcode.array;
 
 import java.util.Arrays;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
  * Time : 18:19
  * 给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。
  */
-public class GenerateMatrix {
+public class SpiralMatrixII {
 
     public static void main(String[] args) {
         int[][] matrix = generateMatrix(3);

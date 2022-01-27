@@ -1,4 +1,4 @@
-package com.zx.algorithm.other;
+package com.zx.algorithm.leetcode.array;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 /**
  * Created by zhangxin on 2022/01/24.
  * Time : 17:47
- * 螺旋遍历二维数组
+ * 给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素。
  */
-public class SpiralRead2DimensionArray {
+public class SpiralMatrixI {
 
     public static void main(String[] args) {
         int[][] matrix = {
@@ -20,7 +20,7 @@ public class SpiralRead2DimensionArray {
     }
 
     private static List<Integer> spiralOrder(int[][] matrix) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<>();
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return result;
         }

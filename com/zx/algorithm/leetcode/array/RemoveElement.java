@@ -1,4 +1,4 @@
-package com.zx.algorithm.leetcode;
+package com.zx.algorithm.leetcode.array;
 
 /**
  * Created by zhangxin on 2022/01/03.

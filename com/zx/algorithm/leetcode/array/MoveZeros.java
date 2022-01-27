@@ -1,4 +1,4 @@
-package com.zx.algorithm.leetcode;
+package com.zx.algorithm.leetcode.array;
 
 import java.util.Arrays;
 

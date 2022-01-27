@@ -1,4 +1,4 @@
-package com.zx.algorithm.other.dynamic;
+package com.zx.algorithm.leetcode.dynamic;
 
 import java.util.HashMap;
 import java.util.HashSet;
