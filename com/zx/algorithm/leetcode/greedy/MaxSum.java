@@ -1,4 +1,4 @@
-package com.zx.algorithm.other.greedy;
+package com.zx.algorithm.leetcode.greedy;
 
 /**
  * @author zhangxin82@jd.com
@@ -15,7 +15,6 @@ public class MaxSum {
     }
 
     public static int maxSum(int[] data) {
-
         int num = 0;
         int sum = Integer.MIN_VALUE;
         for (int i = 0; i < data.length; i++) {

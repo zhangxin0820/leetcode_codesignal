@@ -56,8 +56,6 @@ public class BinaryTree {
         System.out.println(maxDepth(root));
         System.out.println("二叉树的深度(非递归) : ");
         System.out.println(maxDepthLevelOrder(root));
-        System.out.println("二叉树的最大宽度 : ");
-        System.out.println(widthOfBinaryTree(root));
     }
 
     private static void recursivePreOrder(TreeNode root) {
@@ -184,28 +182,6 @@ public class BinaryTree {
             }
         }
         return depth;
-    }
-
-    // 二叉树的最大宽度 每一层的宽度被定义为两个端点（该层最左和最右的非空节点，两端点间的null节点也计入长度）之间的长度。
-    // 记录每个node的序号 按照left=2*root+1 right=2*root+2
-    // 遍历每层 用最后一个node序号-第一个node序号 再+1
-    private static int widthOfBinaryTree(TreeNode root) {
-        if (root == null) return 0;
-        Deque<IndexTreeNode> deque = new LinkedList<>();
-        deque.offerLast(new IndexTreeNode(root, 0));
-        int maxWidth = 1;
-        while (!deque.isEmpty()) {
-            int size = deque.size();
-            maxWidth = Math.max(maxWidth, deque.peekLast().getIndex() - deque.peekFirst().getIndex() + 1);
-            for (int i = 0; i < size; i++) {
-                IndexTreeNode node = deque.pollFirst();
-                TreeNode left = node.getNode().getLeft();
-                if (left != null) deque.offerLast(new IndexTreeNode(left, node.getIndex() * 2 + 1));
-                TreeNode right = node.getNode().getRight();
-                if (right != null) deque.offerLast(new IndexTreeNode(right, node.getIndex() * 2 + 2));
-            }
-        }
-        return maxWidth;
     }
 
     private static void visit(TreeNode node) {

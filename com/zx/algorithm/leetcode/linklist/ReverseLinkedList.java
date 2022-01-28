@@ -1,4 +1,4 @@
-package com.zx.algorithm.other;
+package com.zx.algorithm.leetcode.linklist;
 
 import com.zx.algorithm.ListNode;
 

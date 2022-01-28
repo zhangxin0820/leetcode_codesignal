@@ -3,6 +3,7 @@ package com.zx.algorithm.leetcode;
 /**
  * Created by zhangxin on 2022/01/03.
  * Time : 21:51
+ * 请实现一个函数，把字符串 s 中的每个空格替换成"%20"。
  */
 public class ReplaceSpace {
 

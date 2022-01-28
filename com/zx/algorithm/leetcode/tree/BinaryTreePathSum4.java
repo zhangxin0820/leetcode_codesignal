@@ -1,4 +1,4 @@
-package com.zx.algorithm.leetcode.backtrack;
+package com.zx.algorithm.leetcode.tree;
 
 import com.zx.algorithm.TreeNode;
 
@@ -42,6 +42,7 @@ public class BinaryTreePathSum4 {
 
     private static int dfs(TreeNode root) {
         if (root == null) return 0;
+        // 只有在最大贡献值大于 0 时，才会选取对应子节点
         int left = Math.max(dfs(root.getLeft()), 0);
         int right = Math.max(dfs(root.getRight()), 0);
         int curMax = root.getVal() + left + right;

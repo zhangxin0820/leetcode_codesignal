@@ -1,12 +1,15 @@
-package com.zx.algorithm.leetcode;
+package com.zx.algorithm.leetcode.tree;
 
 import com.zx.algorithm.TreeNode;
 
 /**
- * Created by zhangxin on 2021/12/24.
- * Time : 11:12
+ * Created by zhangxin on 2022/01/28.
+ * Time : 16:02
+ * 给定一个二叉树，找出其最小深度。
+ * 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
+ * 说明：叶子节点是指没有子节点的节点。
  */
-public class LowestCommonAncestor {
+public class MinDepthOfBinaryTree {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(0);
@@ -28,17 +31,14 @@ public class LowestCommonAncestor {
         node6.setLeft(node7);
         node6.setRight(node8);
 
-        TreeNode ancertor = lowestCommonAncestor(root, node4, node5);
-        System.out.println(ancertor.getVal());
+        System.out.println(minDepth(root));
     }
 
-    private static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null || root == p || root == q) return root;
-        TreeNode left = lowestCommonAncestor(root.getLeft(), p, q);
-        TreeNode right = lowestCommonAncestor(root.getRight(), p, q);
-        if (left != null && right != null) return root;
-        if (left == null && right != null) return right;
-        if (left != null && right == null) return left;
-        return null;
+    private static int minDepth(TreeNode root) {
+        if (root == null) return 0;
+        int left = minDepth(root.getLeft());
+        int right = minDepth(root.getRight());
+        if (left == 0 || right == 0) return left + right + 1;
+        else return Math.min(left, right) + 1;
     }
 }
