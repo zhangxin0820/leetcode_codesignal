@@ -27,8 +27,10 @@ public class SpiralMatrixIII {
 
     // 步长step的取值是：1，1，2，2，3，3...
     private static int[][] spiralMatrixIII(int rows, int cols, int rStart, int cStart) {
-        int[] dX = new int[]{0, 1, 0, -1};
-        int[] dY = new int[]{1, 0, -1, 0};
+        int[] dRow = new int[]{0, 1, 0, -1}; // 这里表示Row的移动
+        int[] dCol = new int[]{1, 0, -1, 0}; // 这里表示Col的移动
+        // 例如：cur=0的时候 表示向右移动 此时Row不动即dRow[0]=0 Col增加1即dCol[0]=1
+
         int step = 0, cur = 0; // cur取值：右0，下1，左2，上3；cur为0或者2的时候 step++ 即只有向右或者向左走的时候 步长才会增加1
         int[][] res = new int[rows * cols][2];
         res[0][0] = rStart;
@@ -37,8 +39,8 @@ public class SpiralMatrixIII {
         while (count < rows * cols) {
             if (cur == 0 || cur == 2) step++;
             for (int i = 0; i < step; i++) {
-                rStart += dX[cur];
-                cStart += dY[cur];
+                rStart += dRow[cur];
+                cStart += dCol[cur];
                 // 例如：4*4的情况下(rows=4,cols=4,rStart=1,cStart=2)，当rStart=0，cStart=4时，则不会记录到res中；
                 // 此时，cur=1(向下走)，step保持不变(step=3)，rStart++直到rStart=3，在此期间都不会记录到res中；
                 // 此时，cur=2(向左走)，step++(step=4)，cStart--直到cStart=0，在此期间只有cStart<4的时候，才会记录到res中；
