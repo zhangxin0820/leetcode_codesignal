@@ -7,6 +7,7 @@ import java.util.List;
  * @author zhangxin82@jd.com
  * @create 2019-05-07 16:06
  * @description 全排列
+ * 给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
  */
 
 public class Permutations_1_1 {

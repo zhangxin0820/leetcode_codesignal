@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Created by zhangxin on 2022/01/03.
  * Time : 19:40
  */
-public class ReverseString {
+public class ReverseStringI {
 
     public static void main(String[] args) {
         char[] s = new char[]{'h', 'e', 'l', 'l', 'o'};

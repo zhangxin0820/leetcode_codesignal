@@ -23,6 +23,7 @@ public class IslandPerimeter {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == 1) {
+                    // 题目要求只有一个岛屿 因此直接返回结果即可
                     return dfs(grid, i, j);
                 }
             }

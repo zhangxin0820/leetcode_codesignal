@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * Created by zhangxin on 2021/12/05.
  * Time : 17:21
- * 给定一个无重复元素的正整数数组candidates和一个正整数target,找出candidates中所有可以使数字和为目标数target的唯一组合.
- * candidates中的每个数字在每个组合中只能使用一次.
+ * 给定一个候选人编号的集合 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+ * candidates中的每个数字在每个组合中只能使用一次。
  *
  * 去重：如果i > start && candidates[i] == candidates[i-1]，直接跳过这次循环，保证同样的元素在tmp中的同一个位置只被选择一次，这里有点难理解。
  * 举个例子，例如原数组经过排序为[1,1,2,5],target为8，如果不这样做，两个1都会被选择放在第一个位置，然后进递归，这样就会有两个[1,2,5]被加入结果集，导致重复。

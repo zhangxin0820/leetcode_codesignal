@@ -24,6 +24,10 @@ public class CombinationSum3 {
         return result;
     }
 
+    // 剪枝优化：
+    // 1.已经选择的元素个数：path.size();
+    // 2.还需要的元素个数为: k - path.size();
+    // 3.在集合n中至多要从该起始位置 : n - (k - path.size()) + 1，开始遍历
     private static void dfs(int k, int target, int index, int sum, List<List<Integer>> result, LinkedList<Integer> tmp) {
         if (sum > target) return;
         if (tmp.size() == k) {
