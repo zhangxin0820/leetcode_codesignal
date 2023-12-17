@@ -51,6 +51,13 @@ public class Trap {
         return ans;
     }
 
+    /**
+     * 动态规划
+     * i 左边最高柱子和右边最高柱子取最小值 再减去自身高度 就是可以存储雨水的体积
+     * 即 Math.min(leftMax[i], rightMax[i]) - height[i]
+     * @param height
+     * @return
+     */
     private static int trap1(int[] height) {
         int n = height.length;
         if (n <= 2) return 0;
